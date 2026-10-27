@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>playus practice</title>
+  <meta name="description" content="Practice every playus mini-game as often as you like, with personal bests.">
+  <meta name="theme-color" content="#120f2b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">play<span>us</span> <small>practice</small></a>
+    <button class="icon-btn" id="muteBtn" aria-label="Toggle sound">🔊</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <h1>Practice every mini-game</h1>
+      <p>Each round lasts one minute, like the daily challenge, but you can play as many times as you want. Your best scores are saved in this browser.</p>
+      <button class="btn primary" id="dailyBtn">Today's game</button>
+    </section>
+    <nav class="filters" id="filters" aria-label="Game categories"></nav>
+    <div class="grid" id="grid"></div>
+    <p class="note">This is an unofficial fan practice site and isn't affiliated with playus or Dapps Pte. Ltd. The games are recreations, so the scoring and difficulty won't match the app exactly.</p>
+  </main>
+
+  <section id="play" hidden>
+    <div class="playbar">
+      <button class="icon-btn" id="backBtn" aria-label="Back to all games">←</button>
+      <div class="gtitle"><span id="gEmoji"></span><span id="gName"></span></div>
+      <div class="stat"><span>Score</span><b id="hudScore">0</b></div>
+      <div class="stat"><span id="hudTimeLabel">Time</span><b id="hudTime">60</b></div>
+    </div>
+    <div class="stage-wrap">
+      <div class="stage" id="stage">
+        <canvas id="cv"></canvas>
+        <div class="ui" id="ui"></div>
+        <div class="panel" id="panel"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/engine.js"></script>
+  <script src="js/games/timing.js"></script>
+  <script src="js/games/reflex.js"></script>
+  <script src="js/games/brain.js"></script>
+  <script src="js/games/arcade.js"></script>
+  <script src="js/games/skill.js"></script>
+  <script>PU.boot();</script>
+</body>
+</html>
